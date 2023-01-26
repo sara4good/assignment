@@ -1,9 +1,7 @@
 package com.abnamro.abnAssignment.domain;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,13 +9,13 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
+@Builder
 public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String quantity;
+    private Integer id;
+    private Integer quantity;
     private String name;
 
-    @ManyToOne
-    private Recipe recipe;
 }

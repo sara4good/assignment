@@ -1,8 +1,6 @@
 package com.abnamro.abnAssignment.domain;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,26 +8,23 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Getter
+@Builder
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private Integer id;
     private String name;
     private String instruction;
     private Integer cookingTime;
     private Integer servings;
     private RecipeType recipeType;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Ingredient> ingredients = new HashSet<>();
 
-    public Recipe addIngredient(Ingredient ingredient){
-        ingredient.setRecipe(this);
-        this.ingredients.add(ingredient);
-        return this;
-    }
+
 }
