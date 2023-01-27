@@ -18,7 +18,7 @@ import java.util.Set;
 @AllArgsConstructor
 @ApiModel(description = " information of the recipe request ")
 public class RecipeRequestDto {
-    @NotNull(message = "id cant be null")
+    @ApiModelProperty(notes = "The id of the recipe", example = "1")
     private Integer id;
 
     @NotBlank(message = "recipe cant be blank")
@@ -41,7 +41,7 @@ public class RecipeRequestDto {
     @NotBlank(message = "instruction cant be blank")
     @Size(max = ValidationConfig.MAX_LENGTH_DEFAULT, message = "instruction size is not valid")
     @Pattern(regexp = ValidationConfig.PATTERN_FREE_TEXT, message = "instructio is not in a valid pattern")
-    @ApiModelProperty(notes = "The instructions to create the recipe")
+    @ApiModelProperty(notes = "The instructions to create the recipe" , example="fry vegetables")
     private String instruction;
 
     @NotNull(message = "cookingTime cant be null")

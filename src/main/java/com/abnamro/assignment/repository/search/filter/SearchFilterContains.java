@@ -22,6 +22,6 @@ public class SearchFilterContains implements SearchFilter {
         if (filterKey.equals("ingredients"))
             return cb.like(cb.lower(subRoot.get("name").as(String.class)), "%" + filterValue + "%");
 
-        return cb.like(cb.lower(root.get(filterKey).as(String.class)), "%" + filterValue + "%");
+        return cb.like(root.get(filterKey).as(String.class), "%" + filterValue + "%");
     }
 }

@@ -70,7 +70,7 @@ public class RecipeController {
         log.info("Service successfully deleted existing recipe in DB");
     }
 
-    @GetMapping("/search")
+    @PostMapping("/search")
     @ApiOperation(value="Enables searching recipes")
     public ResponseEntity<List<Recipe>> searchRecipe(@ApiParam(value = "Properties of the the search") @RequestBody @Valid RecipeSearchRequest recipeSearchRequest) throws Exception {
         log.info("Searching the recipe by given criteria");

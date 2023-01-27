@@ -24,7 +24,7 @@ public class RecipeSpecification implements Specification<Recipe>  {
     @Override
     public Predicate toPredicate(Root<Recipe> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
         Optional<SearchOperation> operation = SearchOperation.getOperation(criteria.getOperation());
-        String filterValue = criteria.getValue().toString().toLowerCase();
+        String filterValue = criteria.getValue().toString();
         String filterKey = criteria.getFilterKey();
 
         Join<Object, Object> subRoot = root.join("ingredients");

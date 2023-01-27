@@ -23,6 +23,6 @@ public class SearchFilterDoesNotContain implements SearchFilter {
         if (filterKey.equals("ingredients"))
             return cb.notLike(cb.lower(subRoot.get(filterKey).as(String.class)), "%" + filterValue + "%");
 
-        return cb.notLike(cb.lower(root.get(filterKey).as(String.class)), "%" + filterValue + "%");
+        return cb.notLike(root.get(filterKey).as(String.class), "%" + filterValue + "%");
     }
 }
