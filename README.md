@@ -10,7 +10,7 @@ Specific ingredients (either include or exclude)
 Text search within the instructions. For example, the API should be able to handle the following search requests: • All vegetarian recipes • Recipes that can serve 4 persons and have “potatoes” as an ingredient • Recipes without “salmon” as an ingredient that has “oven” in the instructions.
 
 ## The tech stack 
-* Java 11
+* Java 17
 * Spring boot
 * Maven
 ## System Design
