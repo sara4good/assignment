@@ -150,7 +150,7 @@ class RecipeIntegrationTest {
     }
 
     @Test
-      void test_SearchRecipeByCriteria_successfully() throws Exception {
+      void should_return_recipes_based_on_criteria() throws Exception {
 
         List<Recipe> storedRecipeList = Arrays.asList(recipe1, recipe2);
         recipeRepository.saveAll(storedRecipeList);
